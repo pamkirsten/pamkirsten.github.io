@@ -1,0 +1,484 @@
+
+/* Google Font Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins" , sans-serif;
+}
+.sidebar{
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 78px;
+  background: #fff;
+  padding: 6px 14px;
+  z-index: 99;
+  transition: all 0.5s ease;
+}
+.sidebar.open{
+  width: 250px;
+}
+.sidebar .logo-details{
+  height: 60px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.sidebar .logo-details .icon{
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.sidebar .logo-details .logo_name{
+  color: #1a113d;
+  font-size: 20px;
+  font-weight: 600;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.sidebar.open .logo-details .icon,
+.sidebar.open .logo-details .logo_name{
+  opacity: 1;
+}
+.sidebar .logo-details #btn{
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  font-size: 22px;
+  transition: all 0.4s ease;
+  font-size: 23px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.sidebar.open .logo-details #btn{
+  text-align: right;
+}
+.sidebar i{
+  color: #1a113d;
+  height: 60px;
+  min-width: 50px;
+  font-size: 28px;
+  text-align: center;
+  line-height: 60px;
+}
+.sidebar .nav-list{
+  margin-top: 20px;
+  height: 100%;
+}
+.sidebar li{
+  position: relative;
+  margin: 8px 0;
+  list-style: none;
+}
+.sidebar li .tooltip{
+  position: absolute;
+  top: -20px;
+  left: calc(100% + 15px);
+  z-index: 3;
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 400;
+  opacity: 0;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: 0s;
+}
+.sidebar li:hover .tooltip{
+  opacity: 1;
+  pointer-events: auto;
+  transition: all 0.4s ease;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.sidebar.open li .tooltip{
+  display: none;
+}
+.sidebar input{
+  font-size: 15px;
+  color: #FFF;
+  font-weight: 400;
+  outline: none;
+  height: 50px;
+  width: 100%;
+  width: 50px;
+  border: none;
+  border-radius: 12px;
+  transition: all 0.5s ease;
+  background: #fff;
+}
+.sidebar.open input{
+  padding: 0 20px 0 50px;
+  width: 100%;
+}
+.sidebar .bx-search{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-size: 22px;
+  background: #fff;
+  color: #FFF;
+}
+.sidebar.open .bx-search:hover{
+  background: #ffff;
+  color: #FFF;
+}
+.sidebar .bx-search:hover{
+  background: rgba(218, 217, 255, 0.926);
+  color: #fff;
+}
+.sidebar li a{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  background: #fff;
+}
+.sidebar li a:hover{
+  background: #FFF;
+}
+.sidebar li a .links_name{
+  color: #1a113d;
+  font-size: 15px;
+  font-weight: 400;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s;
+}
+.sidebar.open li a .links_name{
+  opacity: 1;
+  pointer-events: auto;
+}
+.sidebar li a:hover .links_name,
+.sidebar li a:hover i{
+  transition: all 0.5s ease;
+  color: #8681bb;
+}
+.sidebar li i{
+  height: 50px;
+  line-height: 50px;
+  font-size: 18px;
+  border-radius: 12px;
+}
+.sidebar li.profile{
+  position: fixed;
+  height: 40px;
+  width: 78px;
+  left: 0;
+  bottom: -8px;
+  padding: 10px 14px;
+  background: #fefeff;
+  transition: all 0.5s ease;
+  overflow: hidden;
+}
+.sidebar.open li.profile{
+  width: 250px;
+}
+.sidebar li .profile-details{
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.sidebar li img{
+  height: 45px;
+  width: 45px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-right: 10px;
+}
+.sidebar li.profile .name,
+.sidebar li.profile .job{
+  font-size: 15px;
+  font-weight: 400;
+  color: #452E96;
+  white-space: nowrap;
+}
+.sidebar li.profile .job{
+  font-size: 12px;
+}
+.sidebar .profile #log_out{
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  background: #fff;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 0px;
+  transition: all 0.5s ease;
+}
+.sidebar.open .profile #log_out{
+  width: 50px;
+  background: none;
+}
+.home-section{
+  position: absolute;
+  background: #F7F8FA;
+  min-height: 100vh;
+  top: 0;
+  left: 78px;
+  width: calc(100% - 78px);
+  transition: all 0.5s ease;
+  z-index: 2;
+  padding-left: 60px;
+  padding-right:60px;
+}
+.sidebar.open ~ .home-section{
+  left: 250px;
+  width: calc(100% - 250px);
+}
+.home-section .text{
+  display: inline-block;
+  color: #1a113d;
+  
+  font-size: 25px;
+  font-weight: 500;
+  
+  margin-top:20px;
+  margin-left:40px;
+}
+@media (max-width: 420px) {
+  .sidebar li .tooltip{
+    display: none;
+  }
+}
+
+.header-title-block{
+   
+  flex-direction: row;
+    margin-top: 45px;
+    overflow: hidden;
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+
+
+
+}
+
+.header-left{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.header-right{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: baseline;
+
+    
+}
+  .table-names{
+      font-weight: 300;
+    color:#ABABAB;
+    border: 0px;
+
+  }
+  tr{ 
+      border:none;
+  }
+  table, th, td {
+    font-size: 12px;
+    border: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 3px;
+
+  }
+
+  th{
+    background-color: #F7F8FA;
+    text-align: left;   
+     border: 0px;
+
+  }
+
+
+  td{
+    background-color: #FFFF;
+    border: 0px;
+
+
+
+  }
+ 
+  input[type="search"] {
+    margin-right:20px;
+    padding:5px; 
+    border-radius: 5px;
+    border: none;
+    background-color: white; 
+    width:200px;
+  }
+
+
+.dropdown{
+    border:none;
+}
+
+
+#order-button{
+background-color: #452E96; 
+width:fit-content;
+height: 26px;
+
+border: none;
+color: white;
+padding: 2px 8px;
+}
+
+.button{
+    align-items: center;
+}
+
+
+.headername{
+  text-decoration: none;
+  color:black;
+}
+
+/* responsive, form small screens, use 13px font size */
+@media (max-width: 479px) {
+  .header-title-block{
+   
+    flex-direction: column;
+      margin-top: 45px;
+      overflow: hidden;
+      padding-right:8px 8px 8px 0px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  
+  }
+  .table-order{
+      font-size: small ;
+  }
+  .headername{
+    font-size:24px;
+  }
+  .home-section{
+    position: absolute;
+    background: #F7F8FA;
+    min-height: 100vh;
+    top: 0;
+    left: 78px;
+    width: calc(100% - 78px);
+    transition: all 0.5s ease;
+    z-index: 2;
+    padding:10px;
+  }
+
+
+  table, th, td {
+    font-size: 10px ;
+    border: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 3px;
+    border: none;
+
+  }
+
+  .table td {
+      padding:3px;
+  }
+
+  .header-right{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: baseline;
+
+    
+}
+
+.form-group{
+    justify-content: center;
+    
+}
+
+.menu-btn{
+  padding:0;
+  border: 0.5px solid transparent;
+  background-color: transparent;
+
+}
+
+.dropdown{
+  right: 0;
+}
+
+.dropdown-menu{
+  min-width: fit-content;
+  font-size:medium;
+}
+.dropdown-item{
+  min-width: fit-content;
+ 
+  font-size:medium;
+}
+
+}
+
+
+.btn-secondary{
+    background-color: #452E96;
+}
+.pagination > li > a
+{
+    background-color: white;
+    color: #452E96;;
+}
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover
+{
+    color: #452E96;;
+    background-color: #eee;
+    border-color: #ddd;
+}
+
+.pagination > .active > a
+{
+    color: white;
+    background-color: #452E96;
+    border: solid 1px #452E96;
+}
+
+.pagination > .active > a:hover
+{
+    background-color: #452E96;
+    border: solid 1px #452E96;
+}
+
+
+
+
+.modal-dialog{
+  margin-top:50px
+}
+
+.modal-content{
+  padding:20px;
+}

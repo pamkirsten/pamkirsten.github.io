@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+
+<head>
+
+
+    <!-- Datatable plugin CSS file -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" />
+
+    <!-- jQuery library file -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js">
+    </script>
+
+    <!-- Datatable plugin JS library file -->
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
+    </script>
+    <script src="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.js"></script>
+
+
+<link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.css">
+
+
+
+
+    <script src="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1">
+
+    <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+
+
+    <!--<title> Responsive Sidebar Menu </title>-->
+    <link rel="stylesheet" href="../css/orders_css.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="logo-details">
+            <i class='bx bxs-diamond icon'></i>
+
+            <div class="logo_name">MS Silver</div>
+            <i class='bx bx-menu' id="btn"></i>
+        </div>
+        <ul class="nav-list">
+
+            <li>
+                <a href="home.html">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="links_name">Home</span>
+                </a>
+                <span class="tooltip">Home</span>
+            </li>
+
+
+
+
+            <li>
+
+                <a href="orders.html">
+                    <i class='bx bx-clipboard'></i>
+                    <span class="links_name">Orders</span>
+                </a>
+                <span class="tooltip">Orders</span>
+            </li>
+            <li>
+
+
+
+                <a href="customers.html">
+                    <i class='bx bx-user'></i>
+                    <span class="links_name">Customers</span>
+                </a>
+                <span class="tooltip">Customers</span>
+            </li>
+            <li>
+
+                <a href="items.html">
+                    <i class='bx bx-diamond'></i>
+                    <span class="links_name">Items</span>
+                </a>
+                <span class="tooltip">Items</span>
+            </li>
+            <li>
+
+
+            <li class="profile">
+                <div class="profile-details">
+                    <div class="name_job">
+                        <div style="font-size:80%;" class="job">Log Out</div>
+                    </div>
+                </div>
+                <i class='bx bx-log-out' id="log_out"></i>
+            </li>
+        </ul>
+    </div>
+
+
+
+    <section class="home-section">
+
+
+        <div style="width:100%" class="orders sections">
+            <div class=" d-block d-sm-none header-title-block">
+                <div class="header-left">
+                    <div style="float: left;">
+                        <h2><a class="headername" href="#">Orders</a></h2>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div style="width:100%; margin-top: 20px;" class=" order-table">
+
+                <div style="width:100%; margin-top: 40px;" class=" order-table">
+
+                    <div class="d-none d-sm-block" id="toolbarorder">
+                        <div class="form-inline" role="form">
+                            <div class="form-group">
+                                <h2><a class="headername" href="orders.html">Orders</a></h2>
+                            </div>
+                        </div>
+                    </div>
+
+
+                <table data-toolbar="#toolbarorder" data-toggle="table" style="border-color:white; border:0px "
+                data-search="true"   data-mobile-responsive="true"
+                data-pagination="true" data-size
+                 data-buttons="buttons"
+                 class="sortable t-bg" style=" margin-top: 2px;">
+   
+                    <tr class="table-borderless table-names">
+                        <th data-width="50" data-sortable="true">Order No.</th>                         
+                        <th data-sortable="true" >Date</th>
+                        <th data-sortable="true">Client FB Name</th>
+                        <th>Total Invoice Amount</th>
+                        <th>
+                            <i class='bx bx-dots-vertical-rounded'></i>
+                        </th>
+
+
+
+                    </tr>
+
+
+                    <tr class="table-content  table-borderless">
+                        <td>16121</td>
+                        <td>06-01-2302</td>
+                        <td>Shiela Valerie</td>
+                        <td>P 12,342,321.12</td>
+                        <td>
+                            <div class="dropleft dropdown">
+                                <button class="btn menu-btn" type="button" id="dropdownMenuButton"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class='bx bx-dots-vertical-rounded'></i>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="#">Edit</a>
+                                    <a class="dropdown-item" href="#">View</a>
+                                    <a class="dropdown-item" href="#">Delete</a>
+                                </div>
+                            </div>
+                        </td>
+
+
+                    </tr>
+
+                    <tr class="table-content table-borderless">
+                        <td>16121</td>
+                        <td>06-01-2302</td>
+                        <td>Shiela Valerie</td>
+                        <td>P 12,342,321.12</td>
+                        <td>
+                            <div class=dropleft dropdown>
+                                <button class="btn menu-btn" type="button" id="dropdownMenuButton"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class='bx bx-dots-vertical-rounded'></i>
+                                </button>
+                                <div class=" dropleft dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="#">Edit</a>
+                                    <a class="dropdown-item" href="#">View</a>
+                                    <a class="dropdown-item" href="#">Delete</a>
+                                </div>
+                            </div>
+                        </td>
+
+                    </tr>
+
+                    <div>
+
+                        <tr class="table-content table-borderless">
+                            <td>16121</td>
+                            <td>06-01-2302</td>
+                            <td>Shiela Valerie</td>
+                            <td>P 12,342,321.12</td>
+                            <td>
+                                <div class=dropleft dropdown>
+                                    <button class="btn menu-btn" type="button" id="dropdownMenuButton"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class='bx bx-dots-vertical-rounded'></i>
+                                    </button>
+                                    <div class=" dropleft dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Edit</a>
+                                        <a class="dropdown-item" href="#">View</a>
+                                        <a class="dropdown-item" href="#">Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+    
+                        </tr><tr class="table-content table-borderless">
+                            <td>16121</td>
+                            <td>06-01-2302</td>
+                            <td>Shiela Valerie</td>
+                            <td>P 12,342,321.12</td>
+                            <td>
+                                <div class=dropleft dropdown>
+                                    <button class="btn menu-btn" type="button" id="dropdownMenuButton"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class='bx bx-dots-vertical-rounded'></i>
+                                    </button>
+                                    <div class=" dropleft dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Edit</a>
+                                        <a class="dropdown-item" href="#">View</a>
+                                        <a class="dropdown-item" href="#">Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+    
+                        </tr>
+                        <tr class="table-content table-borderless">
+                            <td>16121</td>
+                            <td>06-01-2302</td>
+                            <td>Shiela Valerie</td>
+                            <td>P 12,342,321.12</td>
+                            <td>
+                                <div class=dropleft dropdown>
+                                    <button class="btn menu-btn" type="button" id="dropdownMenuButton"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class='bx bx-dots-vertical-rounded'></i>
+                                    </button>
+                                    <div class=" dropleft dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Edit</a>
+                                        <a class="dropdown-item" href="#">View</a>
+                                        <a class="dropdown-item" href="#">Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+    
+                        </tr>
+                        <tr class="table-content table-borderless">
+                            <td>16121</td>
+                            <td>06-01-2302</td>
+                            <td>Shiela Valerie</td>
+                            <td>P 12,342,321.12</td>
+                            <td>
+                                <div class=dropleft dropdown>
+                                    <button class="btn menu-btn" type="button" id="dropdownMenuButton"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class='bx bx-dots-vertical-rounded'></i>
+                                    </button>
+                                    <div class=" dropleft dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Edit</a>
+                                        <a class="dropdown-item" href="#">View</a>
+                                        <a class="dropdown-item" href="#">Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+    
+                        </tr>
+                        <tr class="table-content table-borderless">
+                            <td>16121</td>
+                            <td>06-01-2302</td>
+                            <td>Shiela Valerie</td>
+                            <td>P 12,342,321.12</td>
+                            <td>
+                                <div class=dropleft dropdown>
+                                    <button class="btn menu-btn" type="button" id="dropdownMenuButton"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class='bx bx-dots-vertical-rounded'></i>
+                                    </button>
+                                    <div class=" dropleft dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Edit</a>
+                                        <a class="dropdown-item" href="#">View</a>
+                                        <a class="dropdown-item" href="#">Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+    
+                        </tr>
+                        <tr class="table-content table-borderless">
+                            <td>16121</td>
+                            <td>06-01-2302</td>
+                            <td>Shiela Valerie</td>
+                            <td>P 12,342,321.12</td>
+                            <td>
+                                <div class=dropleft dropdown>
+                                    <button class="btn menu-btn" type="button" id="dropdownMenuButton"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class='bx bx-dots-vertical-rounded'></i>
+                                    </button>
+                                    <div class=" dropleft dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Edit</a>
+                                        <a class="dropdown-item" href="#">View</a>
+                                        <a class="dropdown-item" href="#">Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+    
+                        </tr>
+                        <tr class="table-content table-borderless">
+                            <td>16121</td>
+                            <td>06-01-2302</td>
+                            <td>Shiela Valerie</td>
+                            <td>P 12,342,321.12</td>
+                            <td>
+                                <div class=dropleft dropdown>
+                                    <button class="btn menu-btn" type="button" id="dropdownMenuButton"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class='bx bx-dots-vertical-rounded'></i>
+                                    </button>
+                                    <div class=" dropleft dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Edit</a>
+                                        <a class="dropdown-item" href="#">View</a>
+                                        <a class="dropdown-item" href="#">Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+    
+                        </tr>
+
+
+                        <tr class="table-content table-borderless">
+                            <td>16121</td>
+                            <td>06-01-2302</td>
+                            <td>Shiela Valerie</td>
+                            <td>P 12,342,321.12</td>
+                            <td>
+                                <div class=dropleft dropdown>
+                                    <button class="btn menu-btn" type="button" id="dropdownMenuButton"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class='bx bx-dots-vertical-rounded'></i>
+                                    </button>
+                                    <div class=" dropleft dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Edit</a>
+                                        <a class="dropdown-item" href="#">View</a>
+                                        <a class="dropdown-item" href="#">Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+    
+                        </tr>
+                        <tr class="table-content table-borderless">
+                            <td>16121</td>
+                            <td>06-01-2302</td>
+                            <td>Shiela Valerie</td>
+                            <td>P 12,342,321.12</td>
+                            <td>
+                                <div class=dropleft dropdown>
+                                    <button class="btn menu-btn" type="button" id="dropdownMenuButton"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class='bx bx-dots-vertical-rounded'></i>
+                                    </button>
+                                    <div class=" dropleft dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Edit</a>
+                                        <a class="dropdown-item" href="#">View</a>
+                                        <a class="dropdown-item" href="#">Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+    
+                        </tr>
+                        <tr class="table-content table-borderless">
+                            <td>16121</td>
+                            <td>06-01-2302</td>
+                            <td>Shiela Valerie</td>
+                            <td>P 12,342,321.12</td>
+                            <td>
+                                <div class=dropleft dropdown>
+                                    <button class="btn menu-btn" type="button" id="dropdownMenuButton"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class='bx bx-dots-vertical-rounded'></i>
+                                    </button>
+                                    <div class=" dropleft dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Edit</a>
+                                        <a class="dropdown-item" href="#">View</a>
+                                        <a class="dropdown-item" href="#">Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+    
+                        </tr>
+                        <tr class="table-content table-borderless">
+                            <td>16121</td>
+                            <td>06-01-2302</td>
+                            <td>Shiela Valerie</td>
+                            <td>P 12,342,321.12</td>
+                            <td>
+                                <div class=dropleft dropdown>
+                                    <button class="btn menu-btn" type="button" id="dropdownMenuButton"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class='bx bx-dots-vertical-rounded'></i>
+                                    </button>
+                                    <div class=" dropleft dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Edit</a>
+                                        <a class="dropdown-item" href="#">View</a>
+                                        <a class="dropdown-item" href="#">Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+    
+                        </tr>
+
+                        <tr class="table-content table-borderless">
+                            <td>16121</td>
+                            <td>06-01-2302</td>
+                            <td>Shiela Valerie</td>
+                            <td>P 12,342,321.12</td>
+                            <td>
+                                <div class=dropleft dropdown>
+                                    <button class="btn menu-btn" type="button" id="dropdownMenuButton"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class='bx bx-dots-vertical-rounded'></i>
+                                    </button>
+                                    <div class=" dropleft dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Edit</a>
+                                        <a class="dropdown-item" href="#">View</a>
+                                        <a class="dropdown-item" href="#">Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+    
+                        </tr>
+                        <tr class="table-content table-borderless">
+                            <td>16121</td>
+                            <td>06-01-2302</td>
+                            <td>Shiela Valerie</td>
+                            <td>P 12,342,321.12</td>
+                            <td>
+                                <div class=dropleft dropdown>
+                                    <button class="btn menu-btn" type="button" id="dropdownMenuButton"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class='bx bx-dots-vertical-rounded'></i>
+                                    </button>
+                                    <div class=" dropleft dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Edit</a>
+                                        <a class="dropdown-item" href="#">View</a>
+                                        <a class="dropdown-item" href="#">Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+    
+                        </tr>
+                        <tr class="table-content table-borderless">
+                            <td>16121</td>
+                            <td>06-01-2302</td>
+                            <td>Shiela Valerie</td>
+                            <td>P 12,342,321.12</td>
+                            <td>
+                                <div class=dropleft dropdown>
+                                    <button class="btn menu-btn" type="button" id="dropdownMenuButton"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class='bx bx-dots-vertical-rounded'></i>
+                                    </button>
+                                    <div class=" dropleft dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Edit</a>
+                                        <a class="dropdown-item" href="#">View</a>
+                                        <a class="dropdown-item" href="#">Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+    
+                        </tr>
+                        <tr class="table-content table-borderless">
+                            <td>16121</td>
+                            <td>06-01-2302</td>
+                            <td>Shiela Valerie</td>
+                            <td>P 12,342,321.12</td>
+                            <td>
+                                <div class=dropleft dropdown>
+                                    <button class="btn menu-btn" type="button" id="dropdownMenuButton"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class='bx bx-dots-vertical-rounded'></i>
+                                    </button>
+                                    <div class=" dropleft dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Edit</a>
+                                        <a class="dropdown-item" href="#">View</a>
+                                        <a class="dropdown-item" href="#">Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+    
+                        </tr>
+                        <tr class="table-content table-borderless">
+                            <td>16121</td>
+                            <td>06-01-2302</td>
+                            <td>Shiela Valerie</td>
+                            <td>P 12,342,321.12</td>
+                            <td>
+                                <div class=dropleft dropdown>
+                                    <button class="btn menu-btn" type="button" id="dropdownMenuButton"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class='bx bx-dots-vertical-rounded'></i>
+                                    </button>
+                                    <div class=" dropleft dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Edit</a>
+                                        <a class="dropdown-item" href="#">View</a>
+                                        <a class="dropdown-item" href="#">Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+    
+                        </tr>
+                        <tr class="table-content table-borderless">
+                            <td>16121</td>
+                            <td>06-01-2302</td>
+                            <td>Shiela Valerie</td>
+                            <td>P 12,342,321.12</td>
+                            <td>
+                                <div class=dropleft dropdown>
+                                    <button class="btn menu-btn" type="button" id="dropdownMenuButton"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class='bx bx-dots-vertical-rounded'></i>
+                                    </button>
+                                    <div class=" dropleft dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Edit</a>
+                                        <a class="dropdown-item" href="#">View</a>
+                                        <a class="dropdown-item" href="#">Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+    
+                        </tr>
+                        <tr class="table-content table-borderless">
+                            <td>16121</td>
+                            <td>06-01-2302</td>
+                            <td>Shiela Valerie</td>
+                            <td>P 12,342,321.12</td>
+                            <td>
+                                <div class=dropleft dropdown>
+                                    <button class="btn menu-btn" type="button" id="dropdownMenuButton"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class='bx bx-dots-vertical-rounded'></i>
+                                    </button>
+                                    <div class=" dropleft dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Edit</a>
+                                        <a class="dropdown-item" href="#">View</a>
+                                        <a class="dropdown-item" href="#">Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+    
+                        </tr>
+                        <tr class="table-content table-borderless">
+                            <td>16121</td>
+                            <td>06-01-2302</td>
+                            <td>Shiela Valerie</td>
+                            <td>P 12,342,321.12</td>
+                            <td>
+                                <div class=dropleft dropdown>
+                                    <button class="btn menu-btn" type="button" id="dropdownMenuButton"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class='bx bx-dots-vertical-rounded'></i>
+                                    </button>
+                                    <div class=" dropleft dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Edit</a>
+                                        <a class="dropdown-item" href="#">View</a>
+                                        <a class="dropdown-item" href="#">Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+    
+                        </tr>
+                        <tr class="table-content table-borderless">
+                            <td>16121</td>
+                            <td>06-01-2302</td>
+                            <td>Shiela Valerie</td>
+                            <td>P 12,342,321.12</td>
+                            <td>
+                                <div class=dropleft dropdown>
+                                    <button class="btn menu-btn" type="button" id="dropdownMenuButton"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class='bx bx-dots-vertical-rounded'></i>
+                                    </button>
+                                    <div class=" dropleft dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Edit</a>
+                                        <a class="dropdown-item" href="#">View</a>
+                                        <a class="dropdown-item" href="#">Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+    
+                        </tr>
+                        <tr class="table-content table-borderless">
+                            <td>16121</td>
+                            <td>06-01-2302</td>
+                            <td>Shiela Valerie</td>
+                            <td>P 12,342,321.12</td>
+                            <td>
+                                <div class=dropleft dropdown>
+                                    <button class="btn menu-btn" type="button" id="dropdownMenuButton"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class='bx bx-dots-vertical-rounded'></i>
+                                    </button>
+                                    <div class=" dropleft dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Edit</a>
+                                        <a class="dropdown-item" href="#">View</a>
+                                        <a class="dropdown-item" href="#">Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+    
+                        </tr>
+                        <tr class="table-content table-borderless">
+                            <td>16121</td>
+                            <td>06-01-2302</td>
+                            <td>Shiela Valerie</td>
+                            <td>P 12,342,321.12</td>
+                            <td>
+                                <div class=dropleft dropdown>
+                                    <button class="btn menu-btn" type="button" id="dropdownMenuButton"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class='bx bx-dots-vertical-rounded'></i>
+                                    </button>
+                                    <div class=" dropleft dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Edit</a>
+                                        <a class="dropdown-item" href="#">View</a>
+                                        <a class="dropdown-item" href="#">Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+    
+                        </tr>
+                        <tr class="table-content table-borderless">
+                            <td>16121</td>
+                            <td>06-01-2302</td>
+                            <td>Shiela Valerie</td>
+                            <td>P 12,342,321.12</td>
+                            <td>
+                                <div class=dropleft dropdown>
+                                    <button class="btn menu-btn" type="button" id="dropdownMenuButton"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class='bx bx-dots-vertical-rounded'></i>
+                                    </button>
+                                    <div class=" dropleft dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Edit</a>
+                                        <a class="dropdown-item" href="#">View</a>
+                                        <a class="dropdown-item" href="#">Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+    
+                        </tr>
+                        <tr class="table-content table-borderless">
+                            <td>16121</td>
+                            <td>06-01-2302</td>
+                            <td>Shiela Valerie</td>
+                            <td>P 12,342,321.12</td>
+                            <td>
+                                <div class=dropleft dropdown>
+                                    <button class="btn menu-btn" type="button" id="dropdownMenuButton"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class='bx bx-dots-vertical-rounded'></i>
+                                    </button>
+                                    <div class=" dropleft dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Edit</a>
+                                        <a class="dropdown-item" href="#">View</a>
+                                        <a class="dropdown-item" href="#">Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+    
+                        </tr>
+                        <tr class="table-content table-borderless">
+                            <td>16121</td>
+                            <td>06-01-2302</td>
+                            <td>Shiela Valerie</td>
+                            <td>P 12,342,321.12</td>
+                            <td>
+                                <div class=dropleft dropdown>
+                                    <button class="btn menu-btn" type="button" id="dropdownMenuButton"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class='bx bx-dots-vertical-rounded'></i>
+                                    </button>
+                                    <div class=" dropleft dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Edit</a>
+                                        <a class="dropdown-item" href="#">View</a>
+                                        <a class="dropdown-item" href="#">Delete</a>
+                                    </div>
+                                </div>
+                            </td>
+    
+                        </tr>
+
+
+
+                    </div>
+
+                    
+
+                    <tr class="table-content table-borderless">
+                        <td>16131</td>
+                        <td>06-01-2302</td>
+                        <td>Shiela Valerie</td>
+                        <td>P 12,342,321.12</td>
+                        <td>
+                            <div class=" dropleft dropdown">
+                                <button class="btn menu-btn" type="button" id="dropdownMenuButton"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class='bx bx-dots-vertical-rounded'></i>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="#">Edit</a>
+                                    <a class="dropdown-item" href="#">View</a>
+                                    <a class="dropdown-item" href="#">Delete</a>
+                                </div>
+                            </div>
+                        </td>
+
+                    </tr>
+                    <tr class="table-content table-borderless">
+                        <td>161121</td>
+                        <td>06-01-2302</td>
+                        <td>Shiela Valerie</td>
+                        <td>P 12,500</td>
+                        <td>
+                            <div class="dropleft dropdown">
+                                <button class="btn menu-btn" type="button" id="dropdownMenuButton"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class='bx bx-dots-vertical-rounded'></i>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="#">Edit</a>
+                                    <a class="dropdown-item" href="#">View</a>
+                                    <a class="dropdown-item" href="#">Delete</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+    </section>
+
+
+    <script>
+
+function buttons () {
+    return {
+      
+      btnAdd: {
+        
+        text: 'Add new row',
+        icon: 'fa-plus',
+        id:'addBtn',
+        event: function () {
+          alert('Do some stuff to e.g. add a new row')
+        },
+        attributes: {
+          title: 'Add a new row to the table'
+        }
+      }
+    }
+  }
+
+
+
+
+        let sidebar = document.querySelector(".sidebar");
+        let closeBtn = document.querySelector("#btn");
+        let searchBtn = document.querySelector(".bx-search");
+
+        closeBtn.addEventListener("click", () => {
+            sidebar.classList.toggle("open");
+            menuBtnChange();//calling the function(optional)
+        });
+
+        searchBtn.addEventListener("click", () => { // Sidebar open when you click on the search iocn
+            sidebar.classList.toggle("open");
+            menuBtnChange(); //calling the function(optional)
+        });
+
+        // following are the code to change sidebar button(optional)
+        function menuBtnChange() {
+            if (sidebar.classList.contains("open")) {
+                closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+            } else {
+                closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");//replacing the iocns class
+            }
+        }
+    </script>
+</body>
+
+</html>
