@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
-
 <head>
   <!-- jQuery library file -->
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js">
@@ -15,16 +13,14 @@
   <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!--<title> Responsive Sidebar Menu </title>-->
-  <link rel="stylesheet" href="../css/items_css.css">
   <link rel="stylesheet" href="../css/all_css.css">
 
   <!-- Boxicons CDN Link -->
   <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-
 <body>
-  <!-- Item Edit Modal -->
+  <!-- Edit Modal -->
   <div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -63,48 +59,7 @@
       </div>
     </div>
   </div>
-
-  <!-- Item Add Modal -->
-  <div class="modal fade" id="addmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Add Item</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-
-          <form>
-            <div class="form-group">
-              <label for="ItemCode">Item Code</label>
-              <input type="text" class="form-control" id="addItemCode" placeholder="">
-            </div>
-
-            <div class="form-group">
-              <label for="ItemDesc"> Item Description </label>
-              <input type="text" class="form-control" id="addItemDesc" placeholder="">
-            </div>
-
-            <div class="form-group">
-              <label for="ItemPrice"> Item Price </label>
-              <input type="text" class="form-control" id="addItemPrice" placeholder="">
-            </div>
-
-          </form>
-
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Add Item</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ItemView Modal -->
+  <!-- View Modal -->
   <div class="modal fade" id="viewmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -132,8 +87,6 @@
       </div>
     </div>
   </div>
-
-
   <div class="sidebar">
     <div class="logo-details">
       <i class='bx bxs-diamond icon'></i>
@@ -208,153 +161,147 @@
           <li class="nav-item">
             <a class="nav-link" href="orders.html">Orders </a>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item ">
             <a class="nav-link" href="items.html">Items</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item active">
             <a class="nav-link" href="customers.html">Customers</a>
           </li>
+
+
         </ul>
       </div>
     </nav>
-    <div style="width:100%" class="itemspage items sections">
-      <div class="d-block d-sm-none header-title-block">
-        <div class="header-left">
-          <div style="float: left;">
-            <h2><a class="headername" href="#">Items</a></h2>
+    <div style="margin-bottom:40px; width:100%" class="customerspage customers sections">
 
-          </div>
+        <div class="d-block d-sm-none header-title-block">
+            <div class="header-left">
+                <div style="float: left;">
+                    <h2><a class="headername" href="orders.html">Customers</a></h2>
+                </div>
 
-        </div>
-
-
-      </div>
-      <div style="width:100%" class=" order-table">
-
-        <div class="d-none d-sm-block" id="toolbaritem">
-          <div class="form-inline" role="form">
-            <div class="form-group">
-              <h2><a class="headername" href="items.html">Items</a></h2>
             </div>
-          </div>
         </div>
 
 
-        <table data-toolbar="#toolbaritem" data-toggle="table" style="border-color:white; border:0px "
-          data-search="true" data-mobile-responsive="true" data-pagination="true" data-size data-buttons="buttons"
-          class="sortable t-bg table-borderless" style=" margin-top: 2px;">
+        <div style="width:100%" class=" order-table">
 
-          <tr class="table-borderless table-names">
-            <th data-width="50" data-sortable="true">Item Code</th>
-            <th>Item Description</th>
-            <th data-sortable="true">Item Price</th>
-            <th>
-              <i class='bx bx-dots-vertical-rounded'></i>
-            </th>
-
-
-
-          </tr>
-
-          <tr class="table-content">
-            <td>R-C-004</td>
-            <td>Silver Earrings Stud Earrings</td>
-            <td>350.00</td>
-            <td>
-              <div class="dropleft dropdown">
-                <button class="btn menu-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false">
-                  <i class='bx bx-dots-vertical-rounded'></i>
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#editmodal" data-toggle="modal" data-target="#editmodal">Edit</a>
-                  <a class="dropdown-item" href="#viewmodal" data-toggle="modal" data-target="#viewmodal">View</a>
-                  <a class="dropdown-item" href="#">Delete</a>
+            <div class="d-none d-sm-block" id="toolbar">
+                <div class="form-inline" role="form">
+                    <div class="form-group">
+                        <h2><a class="headername" href="customers.html">Customers</a></h2>
+                    </div>
                 </div>
-              </div>
-            </td>
-          </tr>
+            </div>
 
+            <table data-toolbar="#toolbar" data-toggle="table" style="border-color:white; border:0px "
+            data-search="true" data-mobile-responsive="true" data-pagination="true" data-size data-buttons="buttons"
+            class="sortable t-bg table-borderless" style=" margin-top: 2px;">
 
-          <tr class="table-content">
-            <td>R-C-003</td>
-            <td>Silver Earrings Designer Exclusive</td>
-            <td>5450.00</td>
-            <td>
-              <div class="dropleft dropdown">
-                <button class="btn menu-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false">
-                  <i class='bx bx-dots-vertical-rounded'></i>
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#">Edit</a>
-                  <a class="dropdown-item" href="#">View</a>
-                  <a class="dropdown-item" href="#">Delete</a>
-                </div>
-              </div>
-            </td>
-          </tr>
+                <tr class="table-borderless table-names">
+                    <th data-width="50">FB Name</th>
+                    <th>Ship To</th>
+                    <th>Address</th>
+                    <th>Contact</th>
 
-          <tr class="table-content">
-            <td>R-C-002</td>
-            <td>Lovers' Collection Couple Ring</td>
-            <td>950.00</td>
-            <td>
-              <div class="dropleft dropdown">
-                <button class="btn menu-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false">
-                  <i class='bx bx-dots-vertical-rounded'></i>
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#">Edit</a>
-                  <a class="dropdown-item" href="#">View</a>
-                  <a class="dropdown-item" href="#">Delete</a>
-                </div>
-              </div>
-            </td>
-          </tr>
-
-          <tr class="table-content">
-            <td>R-C-008</td>
-            <td>Lovers' Collection Couple Ring</td>
-            <td>980.00</td>
-            <td>
-              <div class="dropleft dropdown">
-                <button class="btn menu-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false">
-                  <i class='bx bx-dots-vertical-rounded'></i>
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#">Edit</a>
-                  <a class="dropdown-item" href="#">View</a>
-                  <a class="dropdown-item" href="#">Delete</a>
-                </div>
-              </div>
-            </td>
-          </tr>
+                    <th>
+                        <i class='bx bx-dots-vertical-rounded'></i>
+                    </th>
 
 
 
-        </table>
+                </tr>
 
 
-      </div>
+                <tr class="table-content">
+                    <td>Narciza Sapal Ismael</td>
+                    <td>Narciza S. Ismael</td>
+                    <td>c/o Amina S. Sahial, Porch Bay Hotel and Restaurant, Capitol Hills Bongao, Tawi-Tawi
+                    </td>
+                    <td>0909 868 4239</td>
+                    <td>
+                        <div class="dropleft dropdown">
+                            <button class="btn menu-btn" type="button" id="dropdownMenuButton"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class='bx bx-dots-vertical-rounded'></i>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Edit</a>
+                                <a class="dropdown-item" href="#">View</a>
+                                <a class="dropdown-item" href="#">Delete</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr class="table-content">
+                    <td>Queen Carmie D. Lacastesantos</td>
+                    <td>Carmie Lacaste Santos</td>
+                    <td>West Metro Medical Center, Veterans Road, 28 1B Compound, Zamboanga City</td>
+                    <td>0975 987 3648</td>
+                    <td>
+                        <div class="dropleft dropdown">
+                            <button class="btn menu-btn" type="button" id="dropdownMenuButton"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class='bx bx-dots-vertical-rounded'></i>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Edit</a>
+                                <a class="dropdown-item" href="#">View</a>
+                                <a class="dropdown-item" href="#">Delete</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr class="table-content">
+                    <td>Margarette Langreo</td>
+                    <td>Margarette Langreo</td>
+                    <td>LBC branch pick up @ Victoria, Oriental Mindoro (VCT01)</td>
+                    <td>09172041255</td>
+                    <td>
+                        <div class="dropleft dropdown">
+                            <button class="btn menu-btn" type="button" id="dropdownMenuButton"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class='bx bx-dots-vertical-rounded'></i>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Edit</a>
+                                <a class="dropdown-item" href="#">View</a>
+                                <a class="dropdown-item" href="#">Delete</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+
+
+
+
+
+
+
+            </table>
+
+
+        </div>
 
     </div>
+
   </section>
   <script>
     function buttons() {
       return {
+
         btnAdd: {
+
           text: 'Add new row',
           icon: 'fa-plus',
           id: 'addBtn',
           event: function () {
-            $("#addmodal").modal();
-
+            alert('Do some stuff to e.g. add a new row')
           },
           attributes: {
-            title: 'Add new Item'
+            title: 'Add a new row to the table'
           }
         }
       }

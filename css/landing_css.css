@@ -3,9 +3,9 @@
 *{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   font-family: "Poppins" , sans-serif;
 }
-
 
 body {
     background-color: #fff;
@@ -71,7 +71,7 @@ body {
     .login-wrapper .login-btn {
       padding: 13px 20px;
       background-color: #452E96;
-      border-radius: 0;
+      border-radius: 25px;
       font-size: 20px;
       font-weight: 600;
       color: #fff;
@@ -109,4 +109,14 @@ body {
     -o-object-position: left;
        object-position: left; }
   
-  /*# sourceMappingURL=login.css.map */
+       @media (max-width: 479px) {
+         .row{
+           margin-top:30%;
+         }
+         .brand-wrapper .logo {
+          height: 16px;
+      }
+      .login-title {
+        font-size: 42px;
+      }
+       }
