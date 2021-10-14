@@ -44,6 +44,9 @@ body {
     padding-top: 15px;
     padding-bottom: 24px; }
     @media (max-width: 575px) {
+      .body{
+        min-height: fit-content;
+      }
       .login-wrapper {
         width: 100%; } }
     .login-wrapper label {
